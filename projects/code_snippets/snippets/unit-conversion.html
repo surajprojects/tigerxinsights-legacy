@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Conversion</title>
+    <link rel="stylesheet" href="/projects/code_snippets/stylesheets/custom.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <h1>Code Snippets</h1>
+        <section>
+            <h2>Unit Conversion</h2>
+            <pre id="code-block">
+                <code>                    
+        #include &lt;stdio.h&gt;
+        
+        float inMiles(float num)
+        {
+            return (num * 0.621371);
+        }
+        
+        float inFoots(float num)
+        {
+            return (num / 12);
+        }
+        
+        float inInches(float num)
+        {
+            return (num / 2.54);
+        }
+        
+        float inKgs(float num)
+        {
+            return (num / 2.20462);
+        }
+        
+        float inMeters(float num)
+        {
+            return (num / 39.3701);
+        }
+        
+        int main()
+        {
+            int a;
+            float b, result;
+        
+            while (a != 0)
+            {
+                printf("\n******Main Menu******\n");
+                printf("1 - kms to miles\n");
+                printf("2 - inches to foots\n");
+                printf("3 - cms to inches\n");
+                printf("4 - pounds to kgs\n");
+                printf("5 - inches to meters\n");
+                printf("0 - exit\n");
+                printf("*********************\n");
+        
+                printf("\nChoose the option: ");
+                scanf("%d", &a);
+        
+                if (a == 1)
+                {
+                    printf("Enter the value: ");
+                    scanf("%f", &b);
+                    result = inMiles(b);
+                    printf("\n%.3f kms in miles is %.3f\n", b, result);
+                }
+                else if (a == 2)
+                {
+                    printf("Enter the value: ");
+                    scanf("%f", &b);
+                    result = inFoots(b);
+                    printf("\n%.3f inches in foots is %.3f\n", b, result);
+                }
+                else if (a == 3)
+                {
+                    printf("Enter the value: ");
+                    scanf("%f", &b);
+                    result = inInches(b);
+                    printf("\n%.3f cms in inches is %.3f\n", b, result);
+                }
+                else if (a == 4)
+                {
+                    printf("Enter the value: ");
+                    scanf("%f", &b);
+                    result = inKgs(b);
+                    printf("\n%.3f pounds in kgs is %.3f\n", b, result);
+                }
+                else if (a == 5)
+                {
+                    printf("Enter the value: ");
+                    scanf("%f", &b);
+                    result = inMeters(b);
+                    printf("\n%.3f inches in meters is %.3f\n", b, result);
+                }
+                else if (a == 0)
+                {
+                    break;
+                }
+                else
+                {
+                    printf("Enter a valid option from the main menu!!!");
+                }
+            }
+        
+            printf("\nSee you soon, have a nice day :)"&#41;;
+        
+            return 0;
+        }
+    
+                </code>
+                </pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </section>
+    </main>
+    <script src="/projects/code_snippets/scripts/code-code-button.js"></script>
+</body>
+
+</html>

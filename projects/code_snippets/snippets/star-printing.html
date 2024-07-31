@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Printing</title>
+    <link rel="stylesheet" href="/projects/code_snippets/stylesheets/custom.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <h1>Code Snippets</h1>
+        <section>
+            <h2>Star Printing</h2>
+            <pre id="code-block">
+                <code>                    
+    #include &lt;stdio.h&gt;
+
+        int triangular(int number)
+        {
+            printf("\n");
+            for (int i = 1; i < (number + 1); i++)
+            {
+                for (int j = 0; j < i; j++)
+                {
+                    printf("%c", '*');
+                }
+                printf("\n");
+            }
+        }
+        
+        int reversed_triangular(int number)
+        {
+            printf("\n");
+            for (int i = 1; i < (number + 1); i++)
+            {
+                for (int j = (number + 1); j > i; j--)
+                {
+                    printf("%c", '*');
+                }
+                printf("\n");
+            }
+        }
+        
+        int main()
+        {
+            int option, lines;
+        
+            do
+            {
+                printf("\n******Main Menu******\n");
+                printf("1 - Triangular Pattern\n");
+                printf("2 - Reversed Triangular Pattern\n");
+                printf("0 - exit\n");
+                printf("*********************\n");
+        
+                printf("\nChoose the option: ");
+                scanf("%d", &option);
+        
+                if (option == 1)
+                {
+                    printf("Enter the number of lines to print: ");
+                    scanf("%d", &lines);
+                    triangular(lines);
+                }
+                else if (option == 2)
+                {
+                    printf("Enter the number of lines to print: ");
+                    scanf("%d", &lines);
+                    reversed_triangular(lines);
+                }
+                else if (option == 0)
+                {
+                    break;
+                }
+                else
+                {
+                    printf("\nPlease enter a valid option from the main menu!!!\n");
+                }
+            } while (option != 0);
+        
+            printf("\nSee you soon, have a nice day :)"&#41;;
+        
+            return 0;
+        }
+                </code>
+                </pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </section>
+    </main>
+    <script src="/projects/code_snippets/scripts/code-code-button.js"></script>
+</body>
+
+</html>
