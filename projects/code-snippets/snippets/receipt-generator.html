@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt Generator</title>
+    <link rel="stylesheet" href="/projects/code-snippets/stylesheets/custom.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <h1>Code Snippets</h1>
+        <section>
+            <h2>Receipt Generator</h2>
+            <pre id="code-block">
+                <code>
+    #include &lt;stdio.h&gt;
+    #include &lt;string.h&gt;
+    
+    int func(char str1[])
+    {
+        FILE *ptr = NULL;
+        ptr = fopen("letter.txt", "a+");
+    
+        for (int i = 0; str1[i] != '\0'; i++)
+        {
+            fputc(str1[i], ptr);
+        }
+    
+        fclose(ptr);
+    }
+    
+    int main()
+    {
+        FILE *ptr = NULL;
+        ptr = fopen("letter.txt", "w"); //Create the letter.txt file in the same directory!!!
+        fclose(ptr);
+    
+        char str1[] = "Thanks ";
+        char str2[] = " for purchasing ";
+        char str3[] = " from our ";
+        char str4[] = " outlet. \nPlease visit our ";
+        char str5[] = " outlet for any kind of problems. We plan to server you again soon.";
+        char name[50], item[100], outlet[150];
+    
+        printf("Enter the name of the customer: ");
+        scanf("%s", &name);
+        getchar();
+    
+        printf("Enter the name of the item: ");
+        scanf("%s", &item);
+        getchar();
+    
+        printf("Enter the name of the outlet: ");
+        scanf("%s", &outlet);
+        getchar();
+    
+        strcat(str1, name);
+        strcat(str1, str2);
+        strcat(str1, item);
+        strcat(str1, str3);
+        strcat(str1, outlet);
+        strcat(str1, str4);
+        strcat(str1, outlet);
+        strcat(str1, str5);
+    
+        printf("%s", str1);
+    
+        func(str1);
+        return 0;
+    }
+                </code>
+                </pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </section>
+    </main>
+    <script src="/projects/code-snippets/scripts/code-code-button.js"></script>
+</body>
+
+</html>
