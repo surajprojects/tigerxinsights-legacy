@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid Star Printing</title>
+    <link rel="stylesheet" href="/projects/code-snippets/stylesheets/custom.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <h1>Code Snippets</h1>
+        <section>
+            <h2>Pyramid Star Printing</h2>
+            <pre id="code-block">
+                <code>                    
+    #include &lt;stdio.h&gt;
+
+        int main()
+        {
+            int lines = 5;
+        
+            printf("Enter the number of lines for pyramid: ");
+            scanf("%d", &lines);
+            printf("\n");
+        
+            int space = lines;
+            int stars = 1;
+        
+            for (int i = 1; i < lines + 1; i++)
+            {
+                for (int j = 1; j < space; j++)
+                {
+                    printf(" ");
+                }
+        
+                for (int k = 0; k < stars; k++)
+                {
+                    printf("*");
+                }
+        
+                stars = stars + 2;
+                space--;
+                printf("\n");
+            }
+        
+            printf("\nSee you soon, have a nice day :)"&#41;;
+        
+            return 0;
+        }
+                </code>
+                </pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </section>
+    </main>
+    <script src="/projects/code-snippets/scripts/code-code-button.js"></script>
+</body>
+
+</html>
