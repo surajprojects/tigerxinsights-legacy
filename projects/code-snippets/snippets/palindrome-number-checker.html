@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome Number Checker</title>
+    <link rel="stylesheet" href="/projects/code-snippets/stylesheets/custom.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <h1>Code Snippets</h1>
+        <section>
+            <h2>Palindrome Number Checker</h2>
+            <pre id="code-block">
+                <code>                    
+    #include &lt;stdio.h&gt;
+    #include &lt;stdlib.h&gt;
+    
+    /*
+    A palindromic number is a number (such as 16461) that remains the same when its digits are reversed.
+    */
+    
+    int isPalindrome(int num)
+    {
+        int reversed = 0;
+        int originalNumber = num;
+    
+        while (num != 0)
+        {
+            reversed = reversed * 10 + num % 10;
+            num = num / 10;
+        }
+    
+        printf("\nThe reversed number is %d\n", reversed);
+    
+        if (originalNumber == reversed)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+    }
+    
+    int main()
+    {
+        int number;
+        printf("Enter a number to check whether it is a palindrome or not: ");
+        scanf("%d", &number);
+    
+        if (isPalindrome(number))
+        {
+            printf("This number is a palindrome\n");
+        }
+        else
+        {
+            printf("This number is not a palindrome\n");
+        }
+    
+        return 0;
+    }                        
+                </code>
+                </pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </section>
+    </main>
+    <script src="/projects/code-snippets/scripts/code-code-button.js"></script>
+</body>
+
+</html>
