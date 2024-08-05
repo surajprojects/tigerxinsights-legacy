@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Marks Tracker</title>
+    <link rel="stylesheet" href="/projects/code-snippets/stylesheets/custom.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <h1>Code Snippets</h1>
+        <section>
+            <h2>Students Marks Tracker</h2>
+            <pre id="code-block">
+                <code>                
+    #include &lt;iostream&gt;
+    #include &lt;string&gt;
+    
+    using namespace std;
+    
+    class Test
+    {
+        int englishMarks = 9;
+        int hindiMarks = 8;
+        int mathsMarks = 7;
+        int computerMarks = 9;
+        int scienceMarks = 8;
+    
+    public:
+        void setMarks(void);
+        void getMarks(void);
+        void printMarks(void)
+        {
+            cout << "You got " << englishMarks << " marks in english subject." << endl;
+            cout << "You got " << hindiMarks << " marks in hindi subject." << endl;
+            cout << "You got " << mathsMarks << " marks in maths subject." << endl;
+            cout << "You got " << computerMarks << " marks in computer subject." << endl;
+            cout << "You got " << scienceMarks << " marks in science subject." << endl;
+        };
+    };
+    
+    void Test ::getMarks(void)
+    {
+        string subject;
+        cout << "Enter the name of the subject: ";
+        cin >> subject;
+    
+        if (subject == "english")
+        {
+            cout << "You got " << englishMarks << " marks in english subject." << endl;
+        }
+        else if (subject == "hindi")
+        {
+            cout << "You got " << hindiMarks << " marks in hindi subject." << endl;
+        }
+        else if (subject == "maths")
+        {
+            cout << "You got " << mathsMarks << " marks in maths subject." << endl;
+        }
+        else if (subject == "computer")
+        {
+            cout << "You got " << computerMarks << " marks in computer subject." << endl;
+        }
+        else if (subject == "science")
+        {
+            cout << "You got " << scienceMarks << " marks in science subject." << endl;
+        }
+        else
+        {
+            cout << "Please enter a valid subject name!!!" << endl;
+        }
+    };
+    
+    void Test ::setMarks(void)
+    {
+        int marks;
+        string subject;
+        cout << "Enter the name of the subject: ";
+        cin >> subject;
+        cout << endl;
+    
+        if (subject == "english")
+        {
+            cout << "Enter the marks of the subject: ";
+            cin >> marks;
+            englishMarks = marks;
+            cout << "Successfully updated the marks" << endl;
+            cout << "You got " << englishMarks << " marks in english subject." << endl;
+        }
+        else if (subject == "hindi")
+        {
+            cout << "Enter the marks of the subject: ";
+            cin >> marks;
+            hindiMarks = marks;
+            cout << "Successfully updated the marks" << endl;
+            cout << "You got " << hindiMarks << " marks in hindi subject." << endl;
+        }
+        else if (subject == "maths")
+        {
+            cout << "Enter the marks of the subject: ";
+            cin >> marks;
+            mathsMarks = marks;
+            cout << "Successfully updated the marks" << endl;
+            cout << "You got " << mathsMarks << " marks in maths subject." << endl;
+        }
+        else if (subject == "computer")
+        {
+            cout << "Enter the marks of the subject: ";
+            cin >> marks;
+            computerMarks = marks;
+            cout << "Successfully updated the marks" << endl;
+            cout << "You got " << computerMarks << " marks in computer subject." << endl;
+        }
+        else if (subject == "science")
+        {
+            cout << "Enter the marks of the subject: ";
+            cin >> marks;
+            scienceMarks = marks;
+            cout << "Successfully updated the marks" << endl;
+            cout << "You got " << scienceMarks << " marks in science subject." << endl;
+        }
+        else
+        {
+            cout << "Please enter a valid subject name!!!" << endl;
+        }
+    };
+    
+    int main()
+    {
+        int option;
+        Test student;
+    
+        do
+        {
+            cout << "**********Main Menu**********" << endl;
+            cout << "1 - Print one subject marks" << endl;
+            cout << "2 - Print all subject marks" << endl;
+            cout << "3 - Update one subject marks" << endl
+                    << endl;
+            cout << "0 - exit" << endl;
+            cout << "*****************************" << endl
+                    << endl;
+            cin >> option;
+            cout << endl;
+    
+            switch (option)
+            {
+            case 1:
+                student.getMarks();
+                break;
+            case 2:
+                student.printMarks();
+                break;
+            case 3:
+                student.setMarks();
+                break;
+            case 0:
+                break;
+            default:
+                cout << "Please select a valid option!" << endl;
+            }
+    
+            cout << endl;
+    
+        } while (option != 0);
+    
+        return 0;
+    }
+
+                </code>
+                </pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </section>
+    </main>
+    <script src="/projects/code-snippets/scripts/code-code-button.js"></script>
+</body>
+
+</html>
