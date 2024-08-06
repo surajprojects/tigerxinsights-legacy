@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bubble Sort Algorithm</title>
+    <link rel="stylesheet" href="/projects/code-snippets/stylesheets/custom.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <h1>Code Snippets</h1>
+        <section>
+            <h2>Bubble Sort Algorithm</h2>
+            <pre id="code-block">
+                <code>                
+        
+    #include &lt;stdio.h&gt;
+
+    void display(int *arr, int size)
+    {
+        printf("[");
+        for (int i = 0; i < size; i++)
+        {
+            if (i == size - 1)
+            {
+                printf("%d", arr[i]);
+            }
+            else
+            {
+                printf("%d, ", arr[i]);
+            }
+        }
+        printf("]\n");
+    };
+    
+    void bubbleSort(int *arr, int size)
+    {
+        int tempSize = size - 1;
+    
+        for (int i = 0; i < size - 1; i++)
+        {
+            for (int i = 0; i < tempSize; i++)
+            {
+                if (arr[i] > arr[i + 1])
+                {
+                    int temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                }
+            }
+    
+            tempSize--;
+        }
+    
+        display(arr, size);
+    };
+    
+    void bubbleSortA(int *arr, int size)
+    {
+        int tempSize = size - 1;
+        int isSorted = 0;
+    
+        for (int i = 0; i < size - 1; i++)
+        {
+            printf("Pass %d\n", i + 1);
+            for (int i = 0; i < tempSize; i++)
+            {
+                if (arr[i] > arr[i + 1])
+                {
+                    int temp = arr[i];
+                    arr[i] = arr[i + 1];
+                    arr[i + 1] = temp;
+                    isSorted = 1;
+                }
+            }
+    
+            if (isSorted == 0)
+            {
+                break;
+            }
+    
+            isSorted = 0;
+            tempSize--;
+        }
+    
+        display(arr, size);
+    };
+    
+    int main()
+    {
+        int arr[] = {5, 1, 3, 5, 23, 6};
+        // int arr[] = {1, 3, 5, 5, 6, 23};
+        int size = sizeof(arr) / sizeof(arr[0]);
+    
+        display(arr, size);
+        bubbleSort(arr, size);
+    
+        return 0;
+    }
+            </code>
+                </pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </section>
+    </main>
+    <script src="/projects/code-snippets/scripts/code-code-button.js"></script>
+</body>
+
+</html>
