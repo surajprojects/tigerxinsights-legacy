@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selection Sort Algorithm</title>
+    <link rel="stylesheet" href="/projects/code-snippets/stylesheets/custom.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <h1>Code Snippets</h1>
+        <section>
+            <h2>Selection Sort Algorithm</h2>
+            <pre id="code-block">
+                    <code>                
+            
+    #include &lt;stdio.h&gt;
+
+    void printArray(int *A, int n)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            printf("%d ", A[i]);
+        }
+        printf("\n");
+    }
+    
+    void selectionSort(int *A, int n)
+    {
+        int indexOfMin, temp;
+        printf("After Selection sort\n");
+        for (int i = 0; i < n - 1; i++)
+        {
+            indexOfMin = i;
+            for (int j = i + 1; j < n; j++)
+            {
+                if (A[j] < A[indexOfMin])
+                {
+                    indexOfMin = j;
+                }
+            }
+            // Swap A[i] and A[indexOfMin]
+            temp = A[i];
+            A[i] = A[indexOfMin];
+            A[indexOfMin] = temp;
+        }
+    }
+    
+    int main()
+    {
+        int A[] = {3, 5, 2, 13, 12};
+        int n = 5;
+        printArray(A, n);
+        selectionSort(A, n);
+        printArray(A, n);
+    
+        return 0;
+    }
+                </code>
+                    </pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </section>
+    </main>
+    <script src="/projects/code-snippets/scripts/code-code-button.js"></script>
+</body>
+
+</html>
