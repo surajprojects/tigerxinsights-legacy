@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Postorder Traversal in BST</title>
+    <link rel="stylesheet" href="/projects/code-snippets/stylesheets/custom.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <main>
+        <h1>Code Snippets</h1>
+        <section>
+            <h2>Postorder Traversal in Binary Search Tree</h2>
+            <pre id="code-block">
+                    <code>                
+            
+    #include &lt;stdio.h&gt;
+    #include &lt;malloc.h&gt;
+    
+    struct node
+    {
+        int data;
+        struct node *left;
+        struct node *right;
+    };
+    
+    struct node *createNode(int data)
+    {
+        struct node *n;                                 // creating a node pointer
+        n = (struct node *)malloc(sizeof(struct node)); // Allocating memory in the heap
+        n->data = data;                                 // Setting the data
+        n->left = NULL;                                 // Setting the left and right children to NULL
+        n->right = NULL;                                // Setting the left and right children to NULL
+        return n;                                       // Finally returning the created node
+    }
+    
+    void postOrder(struct node *root)
+    {
+        if (root != NULL)
+        {
+            postOrder(root->left);
+            postOrder(root->right);
+            printf("%d ", root->data);
+        }
+    }
+    
+    int main()
+    {
+        // Constructing the root node - Using Function (Recommended)
+        struct node *p = createNode(4);
+        struct node *p1 = createNode(1);
+        struct node *p2 = createNode(6);
+        struct node *p3 = createNode(5);
+        struct node *p4 = createNode(2);
+    
+        // Finally The tree looks like this:
+        //      4
+        //     / \
+        //    1   6
+        //   / \
+        //  5   2
+    
+        // Linking the root node with left and right children
+        p->left = p1;
+        p->right = p2;
+        p1->left = p3;
+        p1->right = p4;
+    
+        printf("Postorder Traversal in Binary Search Tree\n");
+        postOrder(p);
+    
+        return 0;
+    }
+                            
+                </code>
+                    </pre>
+            <button class="copy-button" onclick="copyCode()">Copy Code</button>
+        </section>
+    </main>
+    <script src="/projects/code-snippets/scripts/code-code-button.js"></script>
+</body>
+
+</html>
